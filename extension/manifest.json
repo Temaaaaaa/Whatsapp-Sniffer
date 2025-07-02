@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsApp Sniffer",
+  "version": "1.0",
+  "description": "Перехват голосовых в WhatsApp Web",
+  "permissions": ["scripting"],
+  "host_permissions": ["https://web.whatsapp.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injectMicTap.js", "injectPlayHook.js"],
+      "matches": ["https://web.whatsapp.com/*"]
+    }
+  ]
+}
